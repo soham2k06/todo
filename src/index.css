@@ -1,13 +1,235 @@
 body {
+  font-family: 'Comic Sans MS', cursive;
+  background-color: #D1F7E5;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.todo-app {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #57B894;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tag-select {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.add-task-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #57B894;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+}
+
+.filter-label {
+  margin-right: 10px;
+}
+
+.filter-select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #BBE2D7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.task-list li:last-child {
+  border-bottom: none;
+}
+
+.task-list li input[type="checkbox"] {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.task-list li .task-name {
+  flex: 1;
+  font-size: 18px;
+  color: #333;
+}
+
+.task-list li.completed .task-name {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-list li .delete-btn,
+.edit-btn {
+  background-color: #57B894;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-list li .edit-btn:hover,
+.task-list li .delete-btn:hover {
+  background-color: #449977;
+}
+
+
+.task-list li .edit-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+
+.personal {
+  background-color: #F6A6A6;
+}
+
+.work {
+  background-color: #A6CDF6;
+}
+
+.shopping {
+  background-color: #F6D6A6;
+}
+
+.study {
+  background-color: #F6C6A6;
+}
+
+.other {
+  background-color: #B6A6F6;
+}
+
+.summary {
+  margin-bottom: 20px;
+}
+
+.task-tag {
+  margin-left: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 16px;
+}
+
+.summary-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.completed-tasks {
+  font-size: 16px;
+  color: #888;
+}
+
+.completed-count {
+  font-weight: bold;
+  color: #57B894;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.clear-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #57B894;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.clear-btn:hover {
+  background-color: #449977;
+}
+
+.completed-task {
+  background-color: #D9EAD3;
+  color: #666;
+}
+
+.completed-task .task-description {
+  text-decoration: line-through;
+}
+
+.edit-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.edit-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
